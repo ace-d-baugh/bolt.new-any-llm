@@ -35,12 +35,24 @@ PROVIDER_LIST.forEach((provider) => {
   initialProviderSettings[provider.name] = {
     ...provider,
     settings: {
-      enabled: false,
+      enabled: true,
     },
   };
 });
+
+//TODO: need to create one single map for all these flags
+
 export const providersStore = map<ProviderSetting>(initialProviderSettings);
 
 export const isDebugMode = atom(false);
 
+export const isEventLogsEnabled = atom(false);
+
 export const isLocalModelsEnabled = atom(true);
+
+export const promptStore = atom<string>('default');
+
+export const latestBranchStore = atom(false);
+
+export const autoSelectStarterTemplate = atom(false);
+export const enableContextOptimizationStore = atom(false);
